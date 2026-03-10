@@ -1,0 +1,135 @@
+baseURL: https://example.org/
+languageCode: zh-cn
+defaultContentLanguage: zh
+title: 嘉祥观清
+theme: ["PaperMod"]
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+enableEmoji: true
+pygmentsUseClasses: true
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: 嘉祥观清
+  description: "佛教学习笔记与文章 - 中观、唯识研究"
+  keywords: [佛教, 中观, 唯识, 宗义, 嘉祥观清]
+  author: ["释观清"]
+
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowShareButtons: true
+  ShowReadingTime: true
+  ShowWordCount: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowToc: true
+  TocOpen: true
+  hideSummary: false
+  searchHidden: false
+
+  images: [""]
+
+  label:
+    text: "嘉祥观清"
+    icon: ""
+    iconHeight: 35
+
+  # profile-mode
+  profileMode:
+    enabled: true
+    title: "嘉祥观清"
+    subtitle: "佛教学习笔记 | 中观 · 唯识 · 宗义研究"
+    imageUrl: ""
+    imageTitle: ""
+    imageWidth: 120
+    imageHeight: 120
+    buttons:
+      - name: 文章归档
+        url: archives
+      - name: 标签云
+        url: tags
+      - name: 搜索
+        url: search
+
+  # home-info mode
+  homeInfoParams:
+    Title: "欢迎来到嘉祥观清"
+    Content: >
+      这里是佛教学习笔记与文章分享平台，
+      主要内容包括中观、唯识等佛教哲学研究。
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/"
+
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: true
+    hiddenInList: false
+    hiddenInSingle: false
+
+  # for search
+  outputs:
+    home:
+      - HTML
+      - RSS
+      - JSON
+
+  # fuse.js
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 10
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 20
+    - identifier: search
+      name: 搜索
+      url: /search/
+      weight: 30
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+  page:
+    - HTML
+  section:
+    - HTML
+  taxonomy:
+    - HTML
+  term:
+    - HTML
+
+taxonomies:
+  tag: tags
