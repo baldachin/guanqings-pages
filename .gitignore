@@ -1,0 +1,14 @@
+# Hugo generated files
+public/
+resources/_gen/
+
+# Pagefind search index
+public/pagefind/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

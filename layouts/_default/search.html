@@ -1,0 +1,60 @@
+{{- define "main" }}
+
+<header class="page-header">
+    <h1>{{- (printf "%s&nbsp;" .Title ) | htmlUnescape -}}
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description }}
+    </div>
+    {{- end }}
+    {{- if not (.Param "hideMeta") }}
+    <div class="post-meta">
+        {{- partial "translation_list.html" . -}}
+    </div>
+    {{- end }}
+</header>
+
+<div id="search"></div>
+
+{{/* Pagefind UI - 开箱即用的搜索组件 */}}
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<style>
+    /* 让 Pagefind UI 与 PaperMod 主题风格更融合 */
+    .pagefind-ui {
+        --pagefind-ui-primary: var(--primary);
+        --pagefind-ui-text: var(--content);
+        --pagefind-ui-background: var(--theme);
+        --pagefind-ui-border: var(--border);
+        --pagefind-ui-tag: var(--tertiary);
+    }
+    .pagefind-ui__search-input {
+        background: var(--entry);
+        border: 1px solid var(--border);
+        color: var(--primary);
+    }
+    .pagefind-ui__result-link {
+        color: var(--primary);
+    }
+    .pagefind-ui__result-excerpt {
+        color: var(--secondary);
+    }
+</style>
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+        new PagefindUI({
+            element: "#search",
+            showImages: false,
+            showEmptyFilters: false,
+            resetStyles: false
+        });
+    });
+</script>
+
+{{- end }}{{/* end main */}}
